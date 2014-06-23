@@ -1,0 +1,60 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "gsmanagementMapper">
+    
+    <resultMap type = "com.mokkoji.app.gsmanagement.Gsmanagement" id="gsmanagement_type">
+        <result column="group_gn" property="group_gn"/>
+        <result column="group_sn" property="group_sn"/>
+    </resultMap>
+    
+     <select id="getGsmanagementlist" resultMap="gsmanagement_type" parameterType="List">
+		SELECT
+			group_gn, group_sn
+		FROM
+			gsmanagement
+	</select>
+    
+    <select id="getGsmanagementFromgroup_gn" resultMap="gsmanagement_type" parameterType="Integer">
+		SELECT
+			group_gn, group_sn
+		FROM
+			gsmanagement
+		WHERE
+			group_gn = #{value}
+	</select>
+    <select id="getGsmanagementFromgroup_sn" resultMap="gsmanagement_type" parameterType="Integer">
+		SELECT
+			group_gn, group_sn
+		FROM
+			gsmanagement
+		WHERE
+			group_gn = #{value}
+	</select>
+	<insert id="insertGsmanagement" parameterType="com.mokkoji.app.gsmanagement.Gsmanagement">
+		INSERT
+		INTO
+			gsmanagement
+			( group_gn, group_sn)
+		VALUES
+			(
+				#{group_gn}, #{group_sn}
+			)
+	</insert>
+	<delete id="deleteGsmanagement" parameterType="Integer">
+		DELETE
+		FROM gsmanagement
+		WHERE
+			group_gn = #{value}
+	</delete>
+	
+	<update id="updateGsmanagement" parameterType="com.mokkoji.app.gsmanagement.Gsmanagement">
+		UPDATE
+			gsmanagement
+		SET
+			group_sn = #{group_sn}
+		WHERE
+			group_gn = #{group_gn}
+	</update>
+	
+	
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="recomscheduleMapper">
+    
+    <resultMap type="com.mokkoji.app.recomschedule.Recomschedule" id="recomschedule_type">
+		<result column="rn" property="rn"/>
+		<result column="userpn" property="userpn"/>
+		<result column="typename" property="typename"/>
+		<result column="Startdate" property="Startdate"/>
+		<result column="Enddate" property="Enddate"/>
+		<result column="weektimes" property="weektimes"/>
+		<result column="daytime" property="daytime"/>
+	</resultMap>
+    
+    <select id="getRecomschedule" resultMap="recomschedule_type">
+		SELECT
+			rn, userpn, typename, Startdate, Enddate, weektimes, daytime
+		FROM
+			recomschedule
+		WHERE
+			userPn = #{value}
+	</select>
+	
+    
+    
+    <insert id="insertRecomschedule" parameterType="com.mokkoji.app.recomschedule.Recomschedule">
+		INSERT
+		INTO
+			recomschedule
+			( rn, userpn, typename, Startdate, Enddate, weektimes, daytime)
+		VALUES
+			(#{rn}, #{userpn}, #{typename}, #{Startdate}, #{Enddate}, #{weektimes}, #{daytime})
+	</insert>
+	
+
+	<delete id="deleteRecomschedule" parameterType="Integer">
+		DELETE
+		FROM
+			recomschedule
+		WHERE
+			rn = #{rn}
+	</delete>
+	
+	<select id="getRecomSchedules" resultMap="recomschedule_type" parameterType="Integer">
+		SELECT
+			rn, userpn, typename, Startdate, Enddate, weektimes, daytime
+		FROM
+			recomschedule
+		WHERE
+			userpn = #{userPn}
+		ORDER BY
+			rn DESC
+		
+	</select>
+    
+  
+ </mapper>

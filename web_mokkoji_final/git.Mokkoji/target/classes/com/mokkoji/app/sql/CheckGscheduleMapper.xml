@@ -1,0 +1,69 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "checkGscheduleMapper">
+    
+    <resultMap type = "com.mokkoji.app.checkgschedule.CheckGschedule" id="checkGschedule_type">
+        <result column="group_sn" property="group_sn"/>
+        <result column="user_pn" property="user_pn"/>
+        <result column="checked" property="checked"/>
+    </resultMap>
+    
+     <select id="getCheckGschedulelist" resultMap="checkGschedule_type" parameterType="List">
+		SELECT
+			group_sn, user_pn, checked
+		FROM
+			checkgschedule
+	</select>    
+    <select id="getCheckGscheduleFromgs_sn" resultMap="checkGschedule_type" parameterType="Integer">
+		SELECT
+			group_sn, user_pn,checked
+		FROM
+			checkgschedule
+		WHERE
+			group_sn = #{value}
+	</select>
+	<select id="getCheckScheduleFromCheck" resultMap="checkGschedule_type" parameterType="com.mokkoji.app.checkgschedule.CheckGschedule">
+		SELECT
+			group_sn, user_pn,checked
+		FROM
+			checkgschedule
+		WHERE
+			group_sn = #{group_sn} and user_pn =#{user_pn} and checked = #{checked} 
+	</select>
+    
+	<select id="getCheckGscheduleFromgroup_sn" resultMap="checkGschedule_type" parameterType="Integer">
+		SELECT
+			gs_sn,user_pn,checked
+		FROM
+			checkgschedule
+		WHERE
+			group_sn = #{value}
+	</select>
+
+	<insert id="insertCheckGschedule" parameterType="com.mokkoji.app.checkgschedule.CheckGschedule">
+		INSERT
+		INTO
+			checkgschedule
+			( group_sn, user_pn, checked)
+		VALUES
+			(
+				#{group_sn},#{user_pn},#{checked}
+			)
+	</insert>
+	<delete id="deleteCheckGschedule" parameterType="Integer">
+		DELETE
+		FROM checkgschedule
+		WHERE
+			group_sn = #{value}
+	</delete>
+	
+	<update id="updateCheckGschedule" parameterType="com.mokkoji.app.checkgschedule.CheckGschedule">
+		UPDATE
+			checkgschedule
+		SET
+			checked = #{checked}
+		WHERE
+			group_sn = #{group_sn} AND user_pn = #{user_pn}
+	</update>
+	
+</mapper>

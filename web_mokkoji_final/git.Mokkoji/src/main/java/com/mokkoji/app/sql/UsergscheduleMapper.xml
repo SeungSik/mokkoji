@@ -1,0 +1,76 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "usergscheduleMapper">
+    
+    <resultMap type = "com.mokkoji.app.usergschedule.Usergschedule" id="usergschedule_type">
+        <result column="gs_sn" property="gs_sn"/>
+        <result column="gs_gn" property="gs_gn"/>
+        <result column="use_pn" property="use_pn"/>
+    </resultMap>
+    
+     <select id="getUsergschedulelist" resultMap="usergschedule_type" parameterType="List">
+		SELECT
+			gs_sn, gs_gn, user_pn
+		FROM
+			usergschedule
+	</select>
+    
+    <select id="getUsergscheduleFromgs_sn" resultMap="usergschedule_type" parameterType="Integer">
+		SELECT
+			gs_sn, gs_gn,user_pn
+		FROM
+			usergschedule
+		WHERE
+			gs_sn = #{value}
+	</select>
+	 <select id="getUsergscheduleFromug" resultMap="usergschedule_type" parameterType="com.mokkoji.app.usergschedule.Usergschedule">
+		SELECT
+			gs_sn, gs_gn,user_pn
+		FROM
+			usergschedule
+		WHERE
+			gs_gn = #{gs_gn} AND user_pn = #{user_pn} 
+	</select>
+    
+	<select id="getUsergscheduleFromgs_gn" resultMap="usergschedule_type" parameterType="Integer">
+		SELECT
+			gs_sn, gs_gn, user_pn
+		FROM
+			usergschedule
+		WHERE
+			gs_gn = #{value}
+	</select>
+    <select id="getUsergscheduleFromuser_pn" resultMap="usergschedule_type" parameterType="Integer">
+		SELECT
+			gs_sn, gs_gn, user_pn
+		FROM
+			usergschedule
+		WHERE
+			user_pn = #{value}
+	</select>
+	<insert id="insertUsergschedule" parameterType="com.mokkoji.app.usergschedule.Usergschedule">
+		INSERT
+		INTO
+			usergschedule
+			( gs_sn, gs_gn, user_pn)
+		VALUES
+			(
+				#{gs_sn}, #{gs_gn},#{user_pn}
+			)
+	</insert>
+	<delete id="deleteUsergschedule" parameterType="Integer">
+		DELETE
+		FROM usergschedule
+		WHERE
+			gs_sn = #{value}
+	</delete>
+	
+	<update id="updateUsergschedule" parameterType="com.mokkoji.app.usergschedule.Usergschedule">
+		UPDATE
+			usergschedule
+		SET
+			user_pn = #{user_pn}
+		WHERE
+			gs_sn = #{group_sn}
+	</update>
+</mapper>

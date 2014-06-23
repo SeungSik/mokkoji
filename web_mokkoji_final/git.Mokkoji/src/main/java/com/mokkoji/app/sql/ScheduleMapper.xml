@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scheduleMapper">
+	
+	<resultMap type="com.mokkoji.app.schedule.Schedule" id="schedule_type">
+		<result column="sn" property="sn"/>
+		<result column="userPn" property="userPn"/>
+		<result column="userId" property="userId"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="startDate" property="startDate"/>
+		<result column="endDate" property="endDate"/>
+		<result column="importance" property="importance"/>
+		
+	</resultMap>
+	
+	<select id="getScheduleCount" parameterType="com.mokkoji.app.schedule.ScheduleFilter" resultType="Integer">
+		SELECT 
+			COUNT(*) 
+		FROM 
+			schedule 
+	</select>
+	
+	<select id="getSchedule" resultMap="schedule_type">
+		SELECT
+			sn, userPn,userId, title, content, startDate, endDate, importance
+		FROM
+			schedule
+		WHERE
+			sn = #{value}
+	</select>
+	
+	<select id="getSchedules" resultMap="schedule_type" parameterType="Integer">
+		SELECT
+			sn, userPn,userId, title, content, startDate, endDate, importance
+		FROM
+			schedule
+		WHERE
+			userPn = #{userPn}
+		ORDER BY
+			sn DESC
+		
+	</select>
+	
+	<!-- LIMIT #{pagination.itemSeqBegin}, #{pagination.numItemsPerPage}	 -->
+	
+	<insert id="insertSchedule" parameterType="com.mokkoji.app.schedule.Schedule">
+		INSERT
+		INTO
+			schedule
+			( userPn,userId,title, content, startDate, endDate, importance)
+		VALUES
+			( #{userPn}, #{userId}, #{title}, #{content}, #{startDate}, #{endDate}, #{importance} )
+	</insert>
+	
+	<update id="updateSchedule" parameterType="com.mokkoji.app.schedule.Schedule">
+		UPDATE
+			schedule
+		SET
+			title = #{title},
+			content = #{content},
+			startDate = #{startDate},
+			endDate = #{endDate}
+		WHERE
+			sn = #{sn}
+	</update>
+	
+	<delete id="deleteSchedule" parameterType="Integer">
+		DELETE
+		FROM
+			schedule
+		WHERE
+			sn = #{sn}
+	</delete>
+	
+</mapper>

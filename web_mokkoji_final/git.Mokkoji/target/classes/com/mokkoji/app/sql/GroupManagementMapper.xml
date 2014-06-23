@@ -1,0 +1,59 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "groupmanagementMapper">
+    
+    <resultMap type = "com.mokkoji.app.groupmanagement.GroupManagement" id="group_management_type">
+        <result column="user_pn" property="user_pn"/>
+        <result column="group_gn" property="group_gn"/>
+    </resultMap>
+    
+     <select id="getGroupManagementlist" resultMap="group_management_type" parameterType="List">
+		SELECT
+			user_pn, group_gn
+		FROM
+			groupmanagement
+	</select>
+    
+    <select id="getGroupManagementFromuser_pn" resultMap="group_management_type" parameterType="Integer">
+		SELECT
+			user_pn, group_gn
+		FROM
+			groupmanagement
+		WHERE
+			user_pn = #{value}
+	</select>
+    <select id="getGroupManagementFromgroup_gn" resultMap="group_management_type" parameterType="Integer">
+		SELECT
+			user_pn, group_gn
+		FROM
+			groupmanagement
+		WHERE
+			group_gn = #{value}
+	</select>
+	<insert id="insertGroupManagement" parameterType="com.mokkoji.app.groupmanagement.GroupManagement">
+		INSERT
+		INTO
+			groupmanagement
+			( user_pn, group_gn)
+		VALUES
+			(
+				#{user_pn}, #{group_gn}
+			)
+	</insert>
+	<delete id="deleteGroupManagement" parameterType="com.mokkoji.app.groupmanagement.GroupManagement">
+		DELETE
+		FROM groupmanagement
+		WHERE
+			user_pn = #{user_pn} and group_gn = #{group_gn}
+	</delete>
+	
+	<update id="updateGroupManagement" parameterType="com.mokkoji.app.groupmanagement.GroupManagement">
+		UPDATE
+			groupmanagement
+		SET
+			group_gn = #{group_gn}
+		WHERE
+			user_pn = #{user_pn}
+	</update>
+	
+</mapper>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+
+	<resultMap type="com.mokkoji.app.member.Member" id="member_type">
+		<result column="pn" property="pn"/>
+		<result column="id" property="id"/>
+		<result column="password" property="password"/>
+		<result column="email" property="email"/>
+	</resultMap>
+
+	<select id="getMemberList" resultMap="member_type" parameterType="List">
+		SELECT
+			pn, id, password, email
+		FROM
+			member
+	</select>
+	
+	<select id="getMemberFromPn" resultMap="member_type" parameterType="Integer">
+		SELECT
+			pn, id, password, email
+		FROM
+			member
+		WHERE
+			pn = #{value}
+	</select>
+	
+	<select id="getMemberFromId" resultMap="member_type" parameterType="String">
+		SELECT
+			pn, id, password, email
+		FROM
+			member
+		WHERE
+			id = #{value}
+	</select>
+	
+	<insert id="insertMember" parameterType="com.mokkoji.app.member.Member">
+		INSERT
+		INTO
+			member
+			( pn, id, password, email )
+		VALUES
+			(
+				#{pn}, #{id}, #{password}, #{email}	
+			)
+	</insert>
+	
+	<delete id="deleteMember" parameterType="Integer">
+		DELETE
+		FROM member
+		WHERE
+			pn = #{value}
+	</delete>
+	
+	<update id="updateMemeber" parameterType="com.mokkoji.app.member.Member">
+		UPDATE
+			member
+		SET
+			id = #{id},
+			password = #{password},
+			email = #{email}
+		WHERE
+			pn = #{pn}
+	</update>
+	
+</mapper>
