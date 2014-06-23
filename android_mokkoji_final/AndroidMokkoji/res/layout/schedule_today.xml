@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#5CD1E5" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.20"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/DayView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="14dp"
+                    android:text="DayView"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#353535"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/cancel"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="닫기" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/todayscheduleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#D4F4FA"
+        android:padding="4dp" >
+
+        <ListView
+            android:id="@+id/todayscheduleList"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:background="#FFFFFF"
+            android:cacheColorHint="#00000000"
+            android:divider="#00000000" >
+        </ListView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#D4F4FA"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="#5CD1E5"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일정 검색"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingLeft="12dp"
+              android:paddingTop="12dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="89dp"
+            android:layout_height="34dp"
+            android:text="날짜로 검색"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+        
+         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" >
+
+             <Button
+                 android:id="@+id/datebutton"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.67"
+                 android:text="일정을 선택해주세요" />
+
+             <Button
+                 android:id="@+id/datesearchButton"
+                 style="?android:attr/buttonStyleSmall"
+                 android:layout_width="44dp"
+                 android:layout_height="37dp"
+                 android:background="@drawable/find"
+                 android:text="" />
+
+         </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+ 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.20"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.02"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:text="키워드로  검색"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.34" >
+
+            <EditText
+                android:id="@+id/editKey"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.67"
+                android:ems="10" />
+
+            <Button
+                android:id="@+id/keywordbutton"
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:background="@drawable/find"
+                android:text="" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/searchscheduleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/outside"
+        android:padding="4dp" >
+
+        <ListView
+            android:id="@+id/searchscheduleList"
+            android:layout_width="fill_parent"
+            android:layout_height="142dp"
+            android:background="#FFFFFF"
+            android:cacheColorHint="#00000000"
+            android:divider="#00000000" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.68"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+</LinearLayout>

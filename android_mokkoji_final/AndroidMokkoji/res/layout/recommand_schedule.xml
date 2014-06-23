@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EAEAEA"
+    android:orientation="vertical" >
+
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="#5CD1E5"
+        android:gravity="center"
+        android:orientation="vertical" >
+        
+           <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:text="추천 일정 "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+     </LinearLayout>      
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+     <TextView
+         android:id="@+id/textView2"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="종류"
+         android:textAppearance="?android:attr/textAppearanceMedium"
+         android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/recommend_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:entries="@array/recommend_type"
+        android:prompt="@string/typeselect" 
+        />
+    
+     <TextView
+         android:id="@+id/textView2"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="기간 설정"
+         android:textAppearance="?android:attr/textAppearanceMedium"
+         android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/during_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:entries="@array/during_time"
+		android:prompt="@string/duringselect"         
+        />
+     
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주간 설정"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/week_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:entries="@array/week_time"
+        android:prompt="@string/weekselect"  
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="하루 시간"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/timeofday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:entries="@array/timeofday"
+        android:prompt="@string/timeselect" 
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/adaptbtn"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/longbar"
+            android:text="적용" />
+
+    </LinearLayout>
+    
+ </LinearLayout>

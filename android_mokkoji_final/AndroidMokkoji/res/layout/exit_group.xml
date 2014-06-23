@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="12dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="정말 나가시겠습니까?"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#6799FF"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/exitok"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:background="#000000"
+                android:text="Yes"
+                android:textColor="#6799FF" />
+
+            <LinearLayout
+                android:layout_width="3dp"
+                android:layout_height="match_parent" >
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/exitno"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:background="#000000"
+                android:text="No"
+                android:textColor="#6799FF" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

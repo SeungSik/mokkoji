@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">모꼬지</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+     <string name="typeselect">종류를 고르세요</string>
+     <string name="duringselect">기간을 고르세요</string>
+     <string name="weekselect">주간 횟수 고르세요</string>
+     <string name="timeselect">하루 시간 고르세요</string>
+    
+     <string-array name="recommend_type">
+        <item>운동</item>
+        <item>독서</item>
+    </string-array>
+    
+    <string-array name="during_time">
+        <item>1주일</item>
+        <item>2주일</item>
+        <item>3주일(권장)</item>
+    </string-array>
+    
+     <string-array name="week_time">
+        <item>2일</item>
+        <item>3일(권장)</item>
+        <item>4일</item>
+        <item>5일(월-금)</item>
+    </string-array>
+    
+     <string-array name="timeofday">
+        <item>1시간</item>
+        <item>2시간(권장)</item>
+        <item>3시간</item>
+    </string-array>
+  
+</resources>

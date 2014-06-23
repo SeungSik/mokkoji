@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffeeeeee"
+    android:orientation="vertical"
+    android:padding="4dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/startdateText"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:textColor="#ff000000"
+            android:textSize="8dp" />
+        
+        <TextView
+            android:id="@+id/enddateText"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:textColor="#ff000000"
+            android:textSize="8dp" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textColor="#ff000000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/importanceText"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:textColor="#FFE400"
+            android:textSize="10dp" />
+        
+    </LinearLayout>
+
+</LinearLayout>
